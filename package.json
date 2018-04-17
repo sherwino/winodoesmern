@@ -19,6 +19,7 @@
 		"passport-local": "^1.0.0",
 		"react": "^15.5.4",
 		"react-dom": "^15.5.4",
+		"react-scripts": "1.1.4",
 		"react-router-dom": "^4.1.2"
 	},
 	"devDependencies": {
@@ -26,14 +27,13 @@
 		"react-scripts": "1.0.7"
 	},
 	"scripts": {
+		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test --env=jsdom",
 		"eject": "react-scripts eject",
 		"dev": "concurrently \"react-scripts start\" \"nodemon server.js\"",
-		"prod": "export NODE_ENV=\"production\" && nodemon server.js",
-		"start": "node server.js",
-        "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
-    },
+		"prod": "export NODE_ENV=\"production\" && nodemon server.js" 
+  },
 	"proxy": "http://localhost:8080",
 	"engines": {
         "node": "8.9.2"
