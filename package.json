@@ -34,7 +34,6 @@
 		"dev": "concurrently \"react-scripts start\" \"nodemon server.js\"",
 		"prod": "export NODE_ENV=\"production\" && nodemon server.js" 
   },
-	"proxy": "http://localhost:8080",
 	"engines": {
         "node": "8.9.2"
     }
