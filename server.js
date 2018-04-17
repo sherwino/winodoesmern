@@ -66,18 +66,18 @@ if (process.env.NODE_ENV === 'production') {
 	const path = require('path')
 	console.log('YOU ARE IN THE PRODUCTION ENV')
 	app.use('/static', express.static(path.join(__dirname, '../build/static')))
-	// app.get('/', (req, res) => {
-	// 	res.sendFile(path.join(__dirname, '../build/'))
-	// })
+	app.get('/', (req, res) => {
+		res.sendFile(path.join(__dirname, '../build/'))
+	})
 }
 
 /* Express app ROUTING */
 app.use('/auth', require('./auth'))
 // Right before your app.listen(), add this:
-app.get("*", (req, res) => {  
-	res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-});
-// ====== Error handler ====
+// app.get("*", (req, res) => {  
+// 	res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+// });
+// // ====== Error handler ====
 app.use(function(err, req, res, next) {
 	console.log('====== ERROR =======')
 	console.error(err.stack)
